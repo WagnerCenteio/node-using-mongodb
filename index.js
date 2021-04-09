@@ -8,6 +8,7 @@ const PORT = 4000;
 const uri =
 	'mongodb+srv://wac:1234@cluster0.7vepm.mongodb.net/productsdb?retryWrites=true&w=majority';
 
+mongoose.Promise = global.Promise;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // bodyparser setup
