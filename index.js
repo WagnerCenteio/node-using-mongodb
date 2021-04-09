@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { connect } from 'mongoose';
+import mongoose from 'mongoose';
 
 const app = express();
 const PORT = 4000;
@@ -8,7 +8,7 @@ const PORT = 4000;
 const uri =
 	'mongodb+srv://wac:1234@cluster0.7vepm.mongodb.net/productsdb?retryWrites=true&w=majority';
 
-connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
