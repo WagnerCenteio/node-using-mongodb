@@ -5,7 +5,10 @@ import { connect } from 'mongoose';
 const app = express();
 const PORT = 4000;
 
-connect('');
+const uri =
+	'mongodb+srv://wac:1234@cluster0.7vepm.mongodb.net/productsdb?retryWrites=true&w=majority';
+
+connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // bodyparser setup
 app.use(bodyParser.urlencoded({ extended: true }));
